@@ -1,0 +1,133 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>HomeWork1</title>
+	<style type="text/css">
+	.header{
+		width:100%; height:30px;
+		line-height:30px;
+		position:relative;
+	}
+	.website{
+		float:left;
+		width:110px; heigt:30px;
+		margin-left:8px;
+	}
+	.menu{
+		float:right;
+		margin-top:0px; margin-bottom:0px;
+		margin-right:8px;
+	}
+	.menu li{
+		display:inline;
+		margin:4px;
+	}
+	.hamburger{
+		display:none;
+		width:28px; height:28px;
+	}
+	.title{
+		height:300px;
+		background-color:#3f4042;color:white;font-weight:bold;font-size:200%;
+		text-align:center;line-height:300px;
+	}
+	.content{
+		width:1200px;margin:auto;
+		display:flex;flex-wrap:wrap;
+		justify-content:space-between;
+	}
+	.box{
+		width:270px; margin:10px;
+		background-color:#EEEEEE;
+		flex-grow:1;
+		text-align:center;
+		line-height:10px;
+	}
+	.box img{  
+		max-height:100%;max-width:100%; 
+		width:auto;height:auto; 
+		top:0;bottom:0;left:0;right:0;
+	}
+	
+	@media screen and (max-width:1200px){
+		.content{
+			width:90%;	
+		}
+	@media screen and (max-width:1200px) and (min-width:970px){
+		.content{
+			width:90%;	
+		}
+		.box{
+			width:400px; margin:10px;
+		}
+	}
+	@media screen and (max-width:600px){
+		.content{
+			width:90%;	
+		}
+		.hamburger{
+			display:block;
+			float:right; margin-right:8px;
+		}
+		.hamburger img{
+			max-height:100%;max-width:100%; 
+			width:auto;height:auto; 
+			top:0;bottom:0;left:0;right:0;
+		}
+		.menu{
+			display:none;
+		}
+	}
+	</style>
+</head>
+<body style="font-size:20px;">
+	<div class="header">
+		<div class="website">My Website</div>
+		<ul class="menu">
+			<li>Item1</li>
+			<li>Item2</li>
+			<li>Item3</li>
+			<li>Item4</li>
+		</ul>
+		<div class="hamburger">
+			<img src="HamburgerMenu.png"></img>
+		</div>
+	</div>
+	<div class="title">Welcome to MyHome</div>
+	<div class="content">
+		<div class="box">
+			<img src="三貂角燈塔-本島最東.jpg"></img>
+			<p>三貂角燈塔</p>
+		</div>
+		<div class="box">
+			<img src="七美嶼燈塔-最西.jpg"></img>
+			<p>七美嶼燈塔</p>
+		</div>
+		<div class="box">
+			<img src="鵝鑾鼻燈塔-本島最南.jpg"></img>
+			<p>鵝鑾鼻燈塔</p>
+		</div>
+		<div class="box">
+			<img src="富貴角燈塔-本島最北.jpg"></img>
+			<p>富貴角燈塔</p>
+		</div>
+		<div class="box">
+			<img src="東引島燈塔-最北.jpg"></img>
+			<p>東引島燈塔</p>
+		</div>
+		<div class="box">
+			<img src="芳苑燈塔-最新.jpg"></img>
+			<p>芳苑燈塔</p>
+		</div>
+		<div class="box">
+			<img src="漁翁島燈塔-最老.jpg"></img>
+			<p>漁翁島燈塔</p>
+		</div>
+		<div class="box">
+			<img src="蘭嶼燈塔-海拔最高.jpg"></img>
+			<p>蘭嶼燈塔</p>
+		</div>
+	</div>
+</body>
+</html>
