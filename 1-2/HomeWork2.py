@@ -79,7 +79,7 @@ def maxProduct(nums):
     # List = sorted(nums)
     # a = List[0] * List[1]
     # b = List[-1] * List[-2]
-    # if a > b:
+    # if a >= b:
     #   print(a)
     # else:
     #   print(b)   *另一種寫法。
