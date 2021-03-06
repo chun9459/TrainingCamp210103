@@ -62,10 +62,36 @@
 				n2 = nums[i];
 			}
 		}
-		console.log(n1*n2);
+		var a = n1 * n2;
+		
+		if (nums[0] <= nums[1]){
+			var n3 = nums[0];
+			var n4 = nums[1];
+		}else{
+			n3 = nums[1];
+			n4 = nums[0];
+		}
+		for(var j = 2; j <= nums.length; j++){
+			if (n4 <= nums[j]){
+				continue;
+			}else if (n4 > nums[j] && n3 > nums[j] && j < nums.length){
+				n4 = n3;
+				n3 = nums[j];
+			}else if (n4 > nums[j] && n3 < nums[j] && j < nums.length){
+				n4 = nums[j];
+			}
+		}
+		var b = n3 * n4;
+		
+		if (a >= b){
+			console.log(a);
+		}else{
+			console.log(b);
+		}
 	}
 	maxProduct([5, 20, 2, 6]); 
 	maxProduct([10, -20, 0, 3]);
+	maxProduct([-10, -20, 1, 2]);
 
 
 
