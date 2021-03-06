@@ -45,19 +45,47 @@ def maxProduct(nums):
     for i in range(2,len(nums)):
         if n2 >= nums[i]:
             continue
-        elif n2 < nums[i] and i < len(nums):
-            if n1 < nums[i]:
-                n2 = n1
-                n1 = nums[i]
-            else:
-                n2 = nums[i]
+        elif n1 < nums[i] and n2 < nums[i] and i < len(nums):
+            n2 = n1
+            n1 = nums[i]
+        elif n1 > nums[i] and n2 < nums[i] and i < len(nums):
+            n2 = nums[i]
             continue
     else:
-        print(n1*n2)
-    # List = sorted(nums,reverse=True)
-    # print(List[0] * List[1])   *另一種寫法。
+        a = n1 * n2
+    
+    if nums[0] <= nums[1]:
+        n3 = nums[0]
+        n4 = nums[1]
+    else:
+        n3 = nums[1]
+        n4 = nums[0]
+    for j in range(2,len(nums)):
+        if n4 <= nums[j]:
+            continue
+        elif n3 > nums[j] and n4 > nums[j] and j < len(nums):
+            n4 = n3
+            n3 = nums[j]
+        elif n3 < nums[j] and n4 > nums[j] and j < len(nums):
+            n4 = nums[j]
+            continue
+    else:
+        b = n3 * n4
+    
+    if a > b:
+        print(a)
+    else:
+        print(b)
+    # List = sorted(nums)
+    # a = List[0] * List[1]
+    # b = List[-1] * List[-2]
+    # if a > b:
+    #   print(a)
+    # else:
+    #   print(b)   *另一種寫法。
 maxProduct([5, 20, 2, 6])
 maxProduct([10, -20, 0, 3])
+maxProduct([-10, -20, 1, 2])
 
 
 
