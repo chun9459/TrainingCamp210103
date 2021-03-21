@@ -16,9 +16,9 @@ def index():
 def siqnin():
     getid = request.form["yourid"]
     getpassword = request.form["yourpassword"]
-    session["getid"] = getid
-    session["getpassword"] = getpassword
     if getid == "test" and getpassword == "test" :
+        session["getid"] = getid
+        session["getpassword"] = getpassword
         return redirect("/member/")
     else :
         return redirect("/error/")
