@@ -28,8 +28,8 @@
 
 
 # 5. 使用 SELECT 指令取得 user 資料表中第 2 ~ 4 共三筆資料，並按照 time 欄位，由近到遠排序。
-    SELECT * FROM user WHERE id>=2 AND id<=4 ORDER BY time DESC;
-    ![image](https://user-images.githubusercontent.com/76869260/112661478-86543600-8e91-11eb-9371-c38fbbae5229.png)
+    SELECT * FROM user ORDER BY time DESC LIMIT 1,3;
+    ![image](https://user-images.githubusercontent.com/76869260/112700969-4d848300-8eca-11eb-935c-4d1b3a3a7d8c.png)
 
 
 # 6. 使用 SELECT 指令取得欄位 username 是 ply 的使用者資料。
