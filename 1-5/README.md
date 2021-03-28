@@ -51,3 +51,29 @@
     DELETE FROM user;
     ![image](https://user-images.githubusercontent.com/76869260/112663732-20b57900-8e94-11eb-9b2d-ce6b8586115a.png)
 
+
+
+
+
+
+# 要求四：結合資料表 SQL JOIN 的操作 (Optional)
+# 1. 在資料庫中，建立新資料表，取名字為message。
+      CREATE TABLE message(
+    -> id bigint auto_increment,
+    -> user_id bigint not null,
+    -> content varchar(255) not null,
+    -> time datetime not null default now(),
+    -> primary key (id)
+    -> )engine=myisam default charset=utf8;
+    ALTER TABLE message ADD FOREIGN KEY(user_id) REFERENCES user(id);
+    ![image](https://user-images.githubusercontent.com/76869260/112743762-b81de780-8fcc-11eb-95b5-c270cf28c50c.png)
+
+
+# 2. 使用 SELECT 搭配 JOIN 的語法，取得所有留言，資料中須包含留言會員的姓名。
+     SELECT user.name, message.content FROM message LEFT JOIN user ON user.id=message.user_id;
+     ![image](https://user-images.githubusercontent.com/76869260/112748506-946b9900-8fee-11eb-8ae5-90a5c2e2cea2.png)
+
+
+# 3. 使用 SELECT 搭配 JOIN 的語法，取得 user 資料表中欄位 username 是 ply 的所有留言，資料中須包含留言會員的姓名。
+    SELECT user.name, message.content FROM message LEFT JOIN user ON user.id=message.user_id WHERE user.username="ply"; 
+    ![image](https://user-images.githubusercontent.com/76869260/112748814-f2997b80-8ff0-11eb-8adf-30e8d2f5cb39.png)
