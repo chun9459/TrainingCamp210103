@@ -12,7 +12,7 @@ def index():
     return render_template("HomeWork4.html")
 
 
-@app.route("/siqnin", methods=["POST"])
+@app.route("/signin", methods=["POST"])
 def siqnin():
     getid = request.form["yourid"]
     getpassword = request.form["yourpassword"]
