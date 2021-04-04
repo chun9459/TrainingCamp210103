@@ -13,7 +13,7 @@ def index():
 
 
 @app.route("/signin", methods=["POST"])
-def siqnin():
+def signin():
     getid = request.form["yourid"]
     getpassword = request.form["yourpassword"]
     if getid == "test" and getpassword == "test" :
@@ -36,7 +36,7 @@ def error():
     return render_template("error.html")
 
 @app.route("/signout")
-def logout():
+def signout():
    session.pop("getid", None)
    return redirect("/")
 
