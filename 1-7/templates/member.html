@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>HomeWork7</title>
+	<style type="text/css">
+	.title{
+		height:120px;
+		background-color:#3f4042;
+		color:white;font-weight:bold;font-size:50px;
+		text-align:center;line-height:120px;
+		padding:18px;
+	}
+	.content{
+		text-align:center;
+		margin-top:15px;
+		font-size:30px;
+	}
+	.content input{
+		padding:8px 20px;
+		margin: 10px;
+	}
+	.content button{
+		padding:5px 10px;
+		font-weight:bold;
+		font-size:15px;
+	}
+	</style>
+</head>
+<body style = "margin:0px">
+	<div class="title">歡迎光臨，這是會員頁</div>
+    <br/>
+	<div class="content">
+		<div>{{ getname }}，歡迎登入系統</div>
+		<div style="text-align:center;font-size:25px;margin-top:6px;">
+			<a href="/signout">登出系統</a>
+		</div>
+
+		</br>
+		
+		<div style = "font-size:27px; font-weight:bold">查詢會員姓名</div>
+	
+			<input type="text" name="username"/>
+			<button onclick="search()">查詢</button>
+	
+
+		<div id="search_result"></div>
+	</div>
+	
+	<script type="text/javascript">
+		function search(){
+			var search_result = document.getElementById("search_result");
+			document.getElementById("search_result").innerHTML = ""; // 清空 search_result 欄位
+			const username = document.getElementsByName("username")[0].value;
+			fetch(`http://127.0.0.1:3000/api/users?username=${username}`).then(function(response){
+				return response.json();
+			}).then(function(result){
+				if (result.data == null){
+					var n = document.createTextNode("查無此帳號");
+					search_result.appendChild(n);
+				}else{
+					var y = document.createTextNode(result.data.name);
+					search_result.appendChild(y);
+				}
+			});
+		}
+	</script>
+</body>
+</html>
