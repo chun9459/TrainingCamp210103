@@ -23,7 +23,7 @@ app.config["JSON_AS_ASCII"] = False
 # 首頁
 @app.route("/")
 def index():       
-    return render_template("HomeWork6.html")
+    return render_template("HomeWork7.html")
 
 # 註冊
 @app.route("/signup", methods=["POST"])
